@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import URL from "../../config"
+import URL from "../config"
 
 const updateNotes = (notes, tags) => {
     const headers = {
