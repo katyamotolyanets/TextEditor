@@ -20,7 +20,7 @@ const FieldForNote = () => {
     let lastTagID = tags?.map(tag => tag.id).pop()
     if (lastTagID == null)
         lastTagID = 0
-
+console.log(URL)
     useEffect(async () => {
         await axios({
             method: 'GET',
