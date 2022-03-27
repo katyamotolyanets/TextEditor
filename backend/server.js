@@ -2,11 +2,14 @@ const express = require('express')
 const fs = require('fs');
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const path = require("path");
 const jsonParser = bodyParser.json()
 
 const app = express();
 
 app.use(cors())
+
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
 app.get('/uploads', (req, res) => {
     const data = fs.readFileSync('./data.json');
