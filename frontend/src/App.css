@@ -1,0 +1,84 @@
+.tag-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.tag-container .tag-form {
+  display: inherit;
+  flex-direction: row;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+.tag-container .tag-form .create-field {
+  width: 15em;
+  height: 1.5em;
+}
+.tag-container .tag-filter {
+  display: inherit;
+  flex-direction: row;
+}
+.tag-container .tag-filter .tag-list {
+  list-style: none;
+}
+.tag-container .tag-filter .tag-list li .tag-list-item .tag-name-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.tag-container .tag-filter .tag-list li .tag-list-item .delete-tag-button {
+  width: 2.5em;
+  height: 2em;
+  max-height: 100%;
+  max-width: 100%;
+  border: none;
+  background-color: transparent;
+}
+.tag-container .tag-filter .tag-list li .tag-list-item .delete-tag-button .button-icon {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

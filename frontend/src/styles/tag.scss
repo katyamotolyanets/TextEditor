@@ -1,0 +1,49 @@
+
+.tag-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  .tag-form {
+    display: inherit;
+    flex-direction: row;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    .create-field {
+      width: 15em;
+      height: 1.5em;
+    }
+  }
+  .tag-filter {
+    display: inherit;
+    flex-direction: row;
+    .tag-list {
+      list-style: none;
+      li {
+        .tag-list-item {
+          .tag-name-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+          .delete-tag-button {
+            width: 2.5em;
+            height: 2em;
+            max-height: 100%;
+            max-width: 100%;
+            border: none;
+            background-color: transparent;
+              .button-icon {
+                width: 100%;
+                height: 100%;
+                max-height: 100%;
+                max-width: 100%;
+              }
+          }
+        }
+      }
+    }
+  }
+}
