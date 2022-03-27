@@ -1,5 +1,5 @@
 const DEBUG = false
-let URL = "https://text-editor-app-heroku.herokuapp.com/uploads"
+let URL = "https://fast-forest-50953.herokuapp.com/uploads"
 
 
 if (DEBUG) {
