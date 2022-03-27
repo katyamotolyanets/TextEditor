@@ -1,11 +1,13 @@
 import axios from "axios";
 
+import URL from "../../config"
+
 const updateNotes = (notes, tags) => {
     const headers = {
         "Content-Type": "application/json"
     };
     return axios
-        .post("http://localhost:8000/uploads",
+        .post(URL,
             {
                 notes,
                 tags
