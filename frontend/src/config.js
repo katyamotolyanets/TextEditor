@@ -1,5 +1,6 @@
 const DEBUG = false
-let URL = "https://stark-brook-17339.herokuapp.com/uploads"
+let URL = "https://text-editor-app-heroku.herokuapp.com/"
+
 
 if (DEBUG) {
     URL = "http://localhost:8000/uploads"
