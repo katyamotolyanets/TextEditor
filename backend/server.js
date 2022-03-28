@@ -12,7 +12,7 @@ const app = express();
 app.use(cors())
 
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
-app.use(express.static(__dirname + '../frontend/src/'));
+app.use(express.static(__dirname + '../frontend/public/'));
 
 app.get('/uploads', (req, res) => {
     const data = fs.readFileSync('./data.json');
