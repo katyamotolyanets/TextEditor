@@ -10,7 +10,7 @@ body, html {
 
 @font-face {
   font-family: "Exo";
-  src: url("../fonts/exo.ttf");
+  src: url("./fonts/exo.ttf");
 }
 .tag-container {
   font-family: "Exo";

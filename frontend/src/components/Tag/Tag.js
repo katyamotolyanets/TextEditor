@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/tag.css"
+import "./tag.css"
 import deleteIcon from "../../assets/deleteIcon.png"
 
 const Tag = (props) => {
