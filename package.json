@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend": "cd frontend && npm i && npm start",
+    "frontend": "cd frontend && npm i && concurrently \"npm run watch-css\" \"npm start\"",
     "backend": "cd backend && npm i && node server.js",
     "start": "concurrently \"npm run backend\" \"npm run frontend\""
   },

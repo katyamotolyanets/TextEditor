@@ -5,7 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import updateNotes from "../../services/note.service";
 import Note from "../Note/Note";
 import Tag from "../Tag/Tag";
-import "./main-page.scss"
+import "../../styles/main-page.css"
 
 import URL from "../../config"
 

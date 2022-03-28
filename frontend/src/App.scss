@@ -9,9 +9,9 @@ body, html {
 }
 
 @import "styles/fonts";
-@import "components/Tag/tag";
-@import "components/MainPage/main-page";
-@import "components/Note/note";
+@import "styles/tag";
+@import "styles/main-page";
+@import "styles/note";
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

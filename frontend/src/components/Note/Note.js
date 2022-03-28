@@ -1,6 +1,6 @@
 import Highlighter from "react-highlight-words";
 
-import "note.scss"
+import "../../styles/note.css"
 import deleteIcon from "../../assets/deleteIcon.png"
 import cancelIcon from "../../assets/cancelIcon.png"
 import submitIcon from "../../assets/submitIcon.png"

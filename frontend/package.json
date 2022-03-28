@@ -22,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass src/styles/ -o src/styles/",
+    "watch-css": "npm run build-css && node-sass src/styles/ -o src/styles/ --watch --recursive"
   },
   "eslintConfig": {
     "extends": [
