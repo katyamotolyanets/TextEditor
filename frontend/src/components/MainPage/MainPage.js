@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import cloneDeep from 'lodash/cloneDeep';
 
-import updateNotes from "../services/note.service";
-import Note from "./Note";
-import Tag from "./Tag";
-import "../App.scss"
+import updateNotes from "../../services/note.service";
+import Note from "../Note/Note";
+import Tag from "../Tag/Tag";
+import "./main-page.scss"
 
-import URL from "../config"
+import URL from "../../config"
 
 const MainPage = () => {
     let [notes, setNotes] = useState([]);

@@ -1,6 +1,6 @@
 import './App.scss';
 
-import MainPage from "./components/MainPage";
+import MainPage from "./components/MainPage/MainPage";
 
 export default function App() {
     return (
