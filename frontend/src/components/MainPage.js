@@ -5,12 +5,15 @@ import cloneDeep from 'lodash/cloneDeep';
 import updateNotes from "../services/note.service";
 import Note from "./Note";
 import Tag from "./Tag";
+import "../App.scss"
+
 import URL from "../config"
 
-const FieldForNote = () => {
+const MainPage = () => {
     let [notes, setNotes] = useState([]);
     let [tags, setTags] = useState([]);
     const [currentUpdate, setCurrentUpdate] = useState({})
+    const [isUpdateClicked, setUpdateClicked] = useState(false)
     const firstStateOfCurrentUpdate = cloneDeep(currentUpdate)
     let [filteredNotes, setFilteredNotes] = useState([])
     let allTags = tags.map(tag => tag.name)
@@ -20,7 +23,7 @@ const FieldForNote = () => {
     let lastTagID = tags?.map(tag => tag.id).pop()
     if (lastTagID == null)
         lastTagID = 0
-console.log(URL)
+
     useEffect(async () => {
         await axios({
             method: 'GET',
@@ -64,7 +67,9 @@ console.log(URL)
         if (tags.find(tag => tag.id === id)) {
             const tag = tags.find(t => t.id === id)
             notesWithTag = notes.filter(note => {
-                return note.note.match(new RegExp('\\b(' + tag.name + ')\\b'))
+                return note.note.split(" ")
+                    .filter(word => word.startsWith("#"))
+                    .find(word => word.substring(1) === tag.name)
             })
             setFilteredNotes(notesWithTag)
         } else {
@@ -79,15 +84,17 @@ console.log(URL)
     const handleSubmitCreateTag = (event) => {
         event.preventDefault();
         const newTag = event.target.tag.value;
-        tags = [...tags, {id: lastTagID + 1, name: newTag}]
-        updateNotes(notes, tags)
-            .then(response => {
-                setNotes(response.data.notes)
-                setTags(response.data.tags)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        if (!tags.find(tag => tag.name === newTag)) {
+            tags = [...tags, {id: lastTagID + 1, name: newTag}]
+            updateNotes(notes, tags)
+                .then(response => {
+                    setNotes(response.data.notes)
+                    setTags(response.data.tags)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
     }
 
     const handleClickDelete = (item, id) => {
@@ -111,6 +118,7 @@ console.log(URL)
 
     const handleClickUpdate = (id) => {
         setCurrentUpdate(notes.find((note) => note.id === id))
+        setUpdateClicked(true)
     }
 
     const handleSubmitUpdate = (event) => {
@@ -142,6 +150,7 @@ console.log(URL)
             notes[idOfCurrentUpdate] = firstStateOfCurrentUpdate;
         }
         setCurrentUpdate({})
+        setUpdateClicked(false)
     }
 
     const onChangeInput = (value) => {
@@ -149,23 +158,25 @@ console.log(URL)
     }
 
     return (
-        <div>
-            <form method="POST" onSubmit={handleSubmitCreateNote}>
-                <textarea type="text" name="note" placeholder="Type your note!" className="create-note-field"/>
-                <button type="submit">Add</button>
-            </form>
-            <div>
-                <Note notes={filteredNotes} handleClickDelete={handleClickDelete} handleClickUpdate={handleClickUpdate}
-                      currentUpdate={currentUpdate} handleSubmitUpdate={handleSubmitUpdate}
-                      onChangeInput={onChangeInput}/>
-            </div>
-            <div>
-                <h1>Tags</h1>
+        <div className="main-container">
+            <div className="tags">
                 <Tag tags={tags} handleClickDelete={handleClickDelete} handleSubmitCreateTag={handleSubmitCreateTag}
                      handleClickFilter={handleClickFilter} handleClickReset={handleClickReset}/>
+            </div>
+            <div className="notes">
+                <form method="POST" onSubmit={handleSubmitCreateNote} className="create-note-form">
+                    <textarea type="text" name="note" placeholder="Type your note!" className="create-note-field"/>
+                    <button type="submit" className="add-button">Add</button>
+                </form>
+                <div>
+                    <Note notes={filteredNotes} handleClickDelete={handleClickDelete}
+                          handleClickUpdate={handleClickUpdate}
+                          currentUpdate={currentUpdate} handleSubmitUpdate={handleSubmitUpdate}
+                          onChangeInput={onChangeInput} isUpdateClicked={isUpdateClicked}/>
+                </div>
             </div>
         </div>
     )
 }
 
-export default FieldForNote;
+export default MainPage;

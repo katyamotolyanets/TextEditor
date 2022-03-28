@@ -1,45 +1,86 @@
+$selectionColor: #8FBC8F;
+$darkGreen: #2F4F4F;
+$lightGreen: #66CDAA;
 
 .tag-container {
+  font-family: "Exo";
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  top: 0;
+  left: 0;
+  p {
+    text-align: center;
+    margin: 0.5em;
+    font-size: 1.3em;
+  }
   .tag-form {
     display: inherit;
     flex-direction: row;
-    max-width: 100%;
-    max-height: 100%;
     width: 100%;
     height: 100%;
     .create-field {
       width: 15em;
-      height: 1.5em;
+      height: 1.75em;
+      font-family: inherit;
+      border-color: $darkGreen;
     }
+    input.create-field::selection {
+      background-color: $selectionColor;
+    }
+  }
+  div.reset-notes-button button {
+    margin: 0.5em 0;
+    width: 4.5em;
+    height: 2em;
+    font-family: "Exo";
+    float: right;
+    text-align: center;
+    background-color: $lightGreen;
+    border-radius: 7%;
+    border-color: transparent;
+    color: $darkGreen;
   }
   .tag-filter {
     display: inherit;
     flex-direction: row;
     .tag-list {
+      max-height: 100%;
       list-style: none;
       li {
         .tag-list-item {
+          position: relative;
+          display: flex;
+          max-width: 100%;
           .tag-name-button {
             background-color: transparent;
             border: none;
             cursor: pointer;
+            max-width: inherit;
+          }
+          button {
+            color: $darkGreen;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1em;
+            width: 13em;
+            height: 2em;
           }
           .delete-tag-button {
-            width: 2.5em;
-            height: 2em;
+            line-height: 2.5em;
+            width: 1.3em;
+            height: 1.3em;
             max-height: 100%;
             max-width: 100%;
             border: none;
             background-color: transparent;
+            position: relative;
               .button-icon {
                 width: 100%;
                 height: 100%;
                 max-height: 100%;
                 max-width: 100%;
+                object-position: center;
               }
           }
         }

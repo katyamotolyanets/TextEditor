@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const path = require("path");
 const jsonParser = bodyParser.json()
 
+const PORT = process.env.PORT || 8000
+
 const app = express();
 
 app.use(cors())
@@ -27,6 +29,6 @@ app.post('/uploads', jsonParser, (req, res) => {
     });
 })
 
-app.listen(process.env.PORT || 8000, () => console.log(`Server started on port 8000`))
+app.listen(PORT, () => console.log(`Server started on port 8000`))
 
 

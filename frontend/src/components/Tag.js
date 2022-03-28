@@ -8,10 +8,13 @@ const Tag = (props) => {
         <div className="tag-container">
             <div className="tag-form">
                 <form method="POST" onSubmit={(e) => props.handleSubmitCreateTag(e)}>
-                    <input type="text" name="tag" placeholder="Type your tag!"
+                    <input type="text" name="tag" placeholder="Create your tag!"
                         className="create-field"/>
-                    <button type="submit">Add</button>
+                    <button type="submit" className="add-button">Add</button>
                 </form>
+            </div>
+            <p>Choose tag to filter notes</p>
+            <div className="reset-notes-button">
                 <button onClick={() => props.handleClickReset()}>Reset</button>
             </div>
             <div className="tag-filter">

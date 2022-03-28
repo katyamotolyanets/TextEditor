@@ -1,11 +1,11 @@
-    import './App.scss';
+import './App.scss';
 
-import FieldForNote from "./components/FieldForNote";
+import MainPage from "./components/MainPage";
 
 export default function App() {
     return (
         <div className="app-container">
-            <FieldForNote/>
+            <MainPage/>
         </div>
 
   );

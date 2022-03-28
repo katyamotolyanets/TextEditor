@@ -1,13 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+@import "styles/fonts";
 @import "./styles/tag";
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import "./styles/main-page";
+@import "./styles/note";
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -26,10 +30,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,3 +38,28 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  font-family: "Exo";
+  background: linear-gradient(45deg, #8FBC8F, #66CDAA);
+  width: 100vw;
+  position: relative;
+  display: flex;
+  color: #2F4F4F;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.add-button, .update-note-button {
+  width: 3.5em;
+  height: 2em;
+  margin-left: 0.3em;
+}
+button.add-button, button.update-note-button {
+  background-color: #66CDAA;
+  opacity: 0.8;
+  border-radius: 10%;
+  border: transparent;
+  line-height: 2.1em;
+}
+

@@ -1,0 +1,44 @@
+$darkGreen: #2F4F4F;
+
+.note-container {
+  font-family: "Exo";
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  max-width: 60vw;
+  max-height: 100%;
+  padding-top: 2em;
+  width: 50vw;
+  .table {
+    border-spacing: 0;
+    td {
+      padding: 1em;
+      border-bottom: 1px solid $darkGreen;
+    }
+    .note-item {
+      background-color: white;
+      opacity: 0.6;
+    }
+    .delete-note-button, .save-button, .cancel-button {
+      line-height: 2.5em;
+      width: 1.5em;
+      height: 1.5em;
+      max-height: 100%;
+      max-width: 100%;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      .button-icon {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        object-position: center;
+      }
+    }
+    .update-note-button {
+      width: 4em;
+    }
+  }
+}
