@@ -1,4 +1,4 @@
-const DEBUG = true
+const DEBUG = false
 let URL = "https://fast-forest-50953.herokuapp.com/uploads"
 
 if (DEBUG) {
