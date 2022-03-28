@@ -1,9 +1,9 @@
 import Highlighter from "react-highlight-words";
 
 import "./note.css"
-import deleteIcon from "../../assets/deleteIcon.png"
-import cancelIcon from "../../assets/cancelIcon.png"
-import submitIcon from "../../assets/submitIcon.png"
+import deleteIcon from "../assets/deleteIcon.png"
+import cancelIcon from "../assets/cancelIcon.png"
+import submitIcon from "../assets/submitIcon.png"
 
 const Note = (props) => {
     return (

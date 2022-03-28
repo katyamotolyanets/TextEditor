@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./tag.css"
-import deleteIcon from "../../assets/deleteIcon.png"
+import deleteIcon from "../assets/deleteIcon.png"
 
 const Tag = (props) => {
     return (
