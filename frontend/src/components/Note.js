@@ -10,7 +10,7 @@ const Note = (props) => {
         <div className="note-container">
             <table className="table">
                 <tbody>
-                    {props.notes?.map(note => {
+                {props.notes?.map(note => {
                         return (
                             <tr className="note-item">
                                 <td>{
@@ -27,13 +27,13 @@ const Note = (props) => {
                                                 )}
                                                          autoEscape={true}
                                                          textToHighlight={note.note}
-
+                                                         highlightStyle={{backgroundColor: '#66CDAA'}}
                                             />
                                         </div> :
                                         <div>
                                             {note.note}
                                         </div>
-                                    }
+                                }
                                 </td>
                                 <td className="td">
                                     <button onClick={() => props.handleClickDelete("note", note.id)}
@@ -45,22 +45,23 @@ const Note = (props) => {
                                     !props.isUpdateClicked ?
                                         <td>
                                             <button onClick={() => props.handleClickUpdate(note.id)}
-                                                    className="update-note-button">Update</button>
+                                                    className="update-note-button">Update
+                                            </button>
                                         </td> :
                                         ""
                                 }
                                 {
                                     props.isUpdateClicked ?
-                                            <td>
-                                                <button value="save"
-                                                        onClick={(e) => {
-                                                            props.handleSubmitUpdate(e)
-                                                        }}
-                                                        className="save-button">
-                                                    <img src={submitIcon} className="button-icon"/>
-                                                </button>
-                                            </td> :
-                                            ""
+                                        <td>
+                                            <button value="save"
+                                                    onClick={(e) => {
+                                                        props.handleSubmitUpdate(e)
+                                                    }}
+                                                    className="save-button">
+                                                <img src={submitIcon} className="button-icon"/>
+                                            </button>
+                                        </td> :
+                                        ""
                                 }
                                 {
                                     props.isUpdateClicked ?
@@ -76,8 +77,9 @@ const Note = (props) => {
                                         ""
                                 }
                             </tr>
-                        )}
-                    )}
+                        )
+                    }
+                )}
                 </tbody>
             </table>
         </div>

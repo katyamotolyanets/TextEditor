@@ -8,10 +8,10 @@ body, html {
   height: 100%;
 }
 
-@import "styles/fonts.scss";
-@import "styles/tag.scss";
-@import "styles/main-page.scss";
-@import "styles/note.scss";
+@import "styles/fonts";
+@import "styles/tag";
+@import "styles/main-page";
+@import "styles/note";
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
